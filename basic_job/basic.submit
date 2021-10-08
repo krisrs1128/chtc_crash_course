@@ -1,5 +1,5 @@
 universe=docker
-docker_image=ubuntu/focal:latest
+docker_image=ubuntu:focal
 
 executable=basic.sh
 transfer_input_files=file1.csv,file2.csv
@@ -10,7 +10,7 @@ request_cpus=1
 request_disk=1MB
 
 # log files
-error=basic-$(Process).err
-output=basic-$(Process).out
-log=basic-$(Process).log
+error=logfile-$(Process).err
+output=logfile-$(Process).out
+log=logfile-$(Process).log
 queue

@@ -1,27 +1,22 @@
 universe=docker
-docker_image=pytorch/torch:latest ????????
+docker_image=pytorch/pytorch:latest
 
-executable=basic.sh
-transfer_input_files=basic.csv
+executable=gpu.sh
+transfer_input_files=basic.csv,gpu.py
 
 # requesting resources
-request_memory=10MB
+request_memory=8GB
 request_cpus=1
 request_disk=1MB
 
 # GPU resources
 request_gpus = 1
-+GPUJobLength = "short" # either short, medium, or long
++GPUJobLength = "short"
 +WantGPULab = true
 +wantFlocking = true
-requirements = (CUDAGlobalMemoryMb > 4000) && (Target.HasCHTCStaging == true)
-
-
-# parameters
-environment = "id=$(Step)"
 
 # log files
-error=basic-$(Process).err
-output=basic-$(Process).out
-log=basic-$(Process).log
-queue 5
+error=logfile-$(Process).err
+output=logfile-$(Process).out
+log=logfile-$(Process).log
+queue

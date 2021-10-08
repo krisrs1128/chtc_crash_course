@@ -1,19 +1,19 @@
 universe=docker
-docker_image=rstudio/rstudio:latest
+docker_image=rocker/verse
 
-executable=basic.sh
-transfer_input_files=configurations.csv
+executable=parallel.sh
+transfer_input_files=configurations.csv,parallel.Rmd
 
 # requesting resources
-request_memory=10MB
+request_memory=1GB
 request_cpus=1
 request_disk=1MB
 
 # parameters
-environment = "id=$(Step)"
+environment="id=$(Step)"
 
 # log files
-error=basic-$(Process).err
-output=basic-$(Process).out
-log=basic-$(Process).log
+error=logfile-$(Process).err
+output=logfile-$(Process).out
+log=logfile-$(Process).log
 queue 5

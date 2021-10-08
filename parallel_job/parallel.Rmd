@@ -5,7 +5,7 @@ params:
 ---
 
 ```{r}
-x <- read.csv("basic.csv")
-sim_params <- x[params$id, ]
+x <- read.csv("configurations.csv")
+sim_params <- x[as.integer(params$id) + 1, ]
 write.csv(2 * sim_params, sprintf("output-%s.csv", params$id))
 ```
