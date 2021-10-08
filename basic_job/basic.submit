@@ -1,0 +1,16 @@
+universe=docker
+docker_image=ubuntu/focal:latest
+
+executable=basic.sh
+transfer_input_files=basic.csv
+
+# requesting resources
+request_memory=10MB
+request_cpus=1
+request_disk=1MB
+
+# log files
+error=basic-$(Process).err
+output=basic-$(Process).out
+log=basic-$(Process).log
+queue
