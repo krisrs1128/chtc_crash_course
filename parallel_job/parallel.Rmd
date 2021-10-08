@@ -1,0 +1,11 @@
+---
+title: "Parallel Job"
+params:
+  id: 0
+---
+
+```{r}
+x <- read.csv("basic.csv")
+sim_params <- x[params$id, ]
+write.csv(2 * sim_params, sprintf("output-%s.csv", params$id))
+```
