@@ -2,7 +2,7 @@ universe=docker
 docker_image=ubuntu/focal:latest
 
 executable=basic.sh
-transfer_input_files=basic.csv
+transfer_input_files=file1.csv,file2.csv
 
 # requesting resources
 request_memory=10MB

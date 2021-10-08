@@ -1,3 +1,4 @@
 #!/bin/bash
 ls -lsh
-sleep 4m
+wc file*
+sleep 30s
